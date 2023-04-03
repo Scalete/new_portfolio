@@ -1,7 +1,9 @@
 @import '@/styles/media-queryes';
 
 .header {
-    padding-top: 27px;
+    position: absolute;
+    top: 0;
+    width: 100%;
     
     a {
         font-weight: 500;
@@ -11,10 +13,15 @@
     ul {
         display: flex;
         justify-content: flex-end;
+        margin-right: 60px;
     }
 
     li {
         margin-right: 33px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     .mobile {
@@ -23,6 +30,10 @@
         a {
             font-size: 25px;
         }
+    }
+
+    @include desktop {
+        padding-top: 27px;
     }
 
     @include mobile {

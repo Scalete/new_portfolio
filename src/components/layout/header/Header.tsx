@@ -7,16 +7,14 @@ const Header: FC = () => {
     
     return (
         <header className={styles.header}>
-            <div className="container">
-                <nav className={styles.desktop}>
-                    <ul>
-                        <li><Link href="/works">Works</Link></li>
-                        <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
-                    </ul>
-                </nav>
-                <HeaderMobile/>
-            </div>
+            <nav className={styles.desktop}>
+                <ul>
+                    <li><Link href="/works">Works</Link></li>
+                    <li><Link href="/blog">Blog</Link></li>
+                    <li><Link href="/contact">Contact</Link></li>
+                </ul>
+            </nav>
+            <HeaderMobile/>
         </header>
     )
 }

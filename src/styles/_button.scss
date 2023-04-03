@@ -1,0 +1,20 @@
+@import '@/styles/variables';
+
+.action {
+
+    padding: 12px 20px 12px;
+    font-size: 20px;
+    font-weight: 500;
+
+    &.main {
+        width: 208px;
+        background-color: $color-red;
+        color: $white;
+        border-radius: 2px;
+        transition: background-color $normal;
+
+        &:hover {
+            background-color: #D95757;
+        }
+    }
+}

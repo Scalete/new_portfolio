@@ -1,0 +1,72 @@
+@import '@/styles/variables';
+@import '@/styles/mixin';
+@import '@/styles/media-queryes';
+
+.promo {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px;
+
+    .text {
+        max-width: 497px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: center;
+        padding: 0 24px;
+        flex-shrink: 0;
+    }
+
+    .image {
+        position: relative;
+    }
+
+    h1 {
+        margin-bottom: res(21, 40);
+        font-weight: 700;
+        font-size: res(32, 44);
+        line-height: 1.36;
+        color: $color-dark;
+    }
+
+    p {
+        margin-bottom: res(27, 38);
+    }
+
+    img, .effect {
+        border-radius: 50%;
+        object-fit: contain;
+        min-width: res(170, 243);
+    }
+
+    .effect {
+        position: absolute;
+        top: res(9, 13);
+        right: res(3, 5);
+        z-index: -1;
+        min-height: res(170, 243);
+        background-color: $color-effect;
+    }
+
+    @include desktop {
+        .text {
+            margin-right: res(-50, 115);
+        }
+    }
+
+    @include mobile {
+        .flex {
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+            flex-shrink: 1;
+        }
+
+        img {
+            margin-bottom: 34px;
+            width: 170px;
+        }
+    }
+}
