@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap');
+
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+body, button, ul, ol, h1, h2, h3, h4, h5, h6, p, fieldset, figure, dl, dd, blockquote {
+    margin: 0;
+}
+
+ul, ol, fieldset, button, th, td {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+button {
+    font-family: 'Proxima Nova', sans-serif !important;
+    font-weight: 700;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button, fieldset {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: none;
+}
+
+strong, b, h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+address, i {
+    font-style: inherit;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: top;
+    user-select: none;
+}
+
+svg {
+    display: block;
+}
+
+[tabindex],
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+::-moz-focus-inner {
+    border:0;
+}
+
+.container {
+    max-width: 856px;
+    margin: 0 auto;
+}
+
+/* header burger menu */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 18px;
+    top: 20px;
+}
+
+.bm-burger-bars {
+    background: #373a47;
+}
+
+.bm-burger-bars-hover {
+    background: #a90000;
+}
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+.bm-cross {
+    background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+}
+
+.bm-menu {
+    background: #373a47;
+}
+
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+.bm-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #b8b7ad;
+}
+
+.bm-item {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,37 @@
+@import '@/styles/media-queryes';
+
+.header {
+    padding-top: 27px;
+    
+    a {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    li {
+        margin-right: 33px;
+    }
+
+    .mobile {
+        display: none;
+        
+        a {
+            font-size: 25px;
+        }
+    }
+
+    @include mobile {
+        .mobile {
+            display: block;
+        }
+
+        .desktop {
+            display: none;
+        }
+    }
+}
