@@ -1,0 +1,78 @@
+@import '@/styles/variables';
+@import '@/styles/mixin';
+@import '@/styles/media-queryes';
+
+.recentPosts {
+    background-color: $color-effect;
+    padding: 23px 0 res(38, 32);
+
+    .recentPostsHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 23px;
+
+        span {
+            font-size: 22px;
+        }
+
+        a {
+            color: $color-blue;
+        }
+    }
+
+    .recentPostsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-columns: 1fr;
+        gap: res(17, 20);
+    }
+
+    .recentPostItem {
+        padding: res(12, 24);
+        background-color: $white;
+
+        h3 {
+            font-weight: 700;
+            font-size: res(22, 26);
+            line-height: 1.46;
+            margin-bottom: 17px;
+        }
+    }
+
+    .recentPostItemOptions {
+        margin-bottom: 11px;
+
+        span {
+            font-size: 18px;
+            line-height: 1.44;
+
+            &:first-child {
+                padding-right: res(24, 30);
+                border-right: 1px solid $black;
+            }
+
+            &:last-child {
+                padding-left: res(24, 30);
+            }
+        }
+    }
+
+    @include mobile {
+        padding-left: 11px;
+        padding-right: 11px;
+
+        .recentPostsWrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .recentPostsHeader {
+
+            justify-content: center;
+
+            a {
+                display: none;
+            }
+        }
+    }
+}
