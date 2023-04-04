@@ -21,6 +21,7 @@ const HeaderMobile: FC = () => {
                   isOpen={isOpen} 
                   onOpen={handleIsOpen} 
                   onClose={handleIsOpen} 
+                  bodyClassName={ "disable-scroll" }
                   customBurgerIcon={<Image width={30} height={18} src="/burger.svg" alt="Menu" />}
             >
                 <Link className="menu-item" href="/works" onClick={closeSideBar}>Works</Link>
