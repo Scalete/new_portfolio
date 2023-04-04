@@ -9,7 +9,7 @@ const RecentPosts: FC = () => {
             <div className="container">
                 <div className={styles.recentPostsHeader}>
                     <span>Recent posts</span>
-                    <Link href="/blog">View all</Link>
+                    <Link className={styles.hoverUnderlineAnimation} href="/blog">View all</Link>
                 </div>
                 <ul className={styles.recentPostsWrapper}>
                     <li><RecentPostItem /></li>

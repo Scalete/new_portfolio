@@ -9,9 +9,9 @@ const Header: FC = () => {
         <header className={styles.header}>
             <nav className={styles.desktop}>
                 <ul>
-                    <li><Link href="/works">Works</Link></li>
-                    <li><Link href="/blog">Blog</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
+                    <li><Link className={styles.hoverUnderlineAnimation} href="/works">Works</Link></li>
+                    <li><Link className={styles.hoverUnderlineAnimation} href="/blog">Blog</Link></li>
+                    <li><Link className={styles.hoverUnderlineAnimation} href="/contact">Contact</Link></li>
                 </ul>
             </nav>
             <HeaderMobile/>

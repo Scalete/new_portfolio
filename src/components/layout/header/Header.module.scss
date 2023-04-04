@@ -1,9 +1,12 @@
 @import '@/styles/media-queryes';
+@import '@/styles/mixin';
 
 .header {
     position: absolute;
     top: 0;
     width: 100%;
+
+    @include hover-underline-animation;
     
     a {
         font-weight: 500;

@@ -6,6 +6,8 @@
     background-color: $color-effect;
     padding: 23px 0 res(38, 32);
 
+    @include hover-underline-animation($color-blue);
+
     .recentPostsHeader {
         display: flex;
         justify-content: space-between;
