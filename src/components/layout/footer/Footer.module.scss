@@ -1,0 +1,26 @@
+@import '@/styles/variables';
+
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 52px 0;
+
+    ul {
+        display: flex;
+        gap: 35px;
+        margin-bottom: 26px;
+        
+        li {
+            transition: transform $normal;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    span {
+        font-size: 14px;
+    }
+}
