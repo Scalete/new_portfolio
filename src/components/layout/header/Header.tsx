@@ -2,16 +2,28 @@ import { FC } from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
 import HeaderMobile from './HeaderMobile'
+import { useRouter } from 'next/router'
 
 const Header: FC = () => {
+
+    const routes = [
+        {link: '/', name: 'Main'}, 
+        {link: '/works', name: 'Works'}, 
+        {link: '/blog', name: 'Blog'}, 
+        {link: '/contact', name: 'Contact'}
+    ];
+
+    const router = useRouter();
+
+    const renderRoutes = () => {
+        return routes.map(item => <li><Link className={`${styles.hoverUnderlineAnimation} ${router.pathname == item.link ? styles.active: ''}`} href={item.link}>{item.name}</Link></li>);
+    }
     
     return (
         <header className={styles.header}>
             <nav className={styles.desktop}>
                 <ul>
-                    <li><Link className={styles.hoverUnderlineAnimation} href="/works">Works</Link></li>
-                    <li><Link className={styles.hoverUnderlineAnimation} href="/blog">Blog</Link></li>
-                    <li><Link className={styles.hoverUnderlineAnimation} href="/contact">Contact</Link></li>
+                    {renderRoutes()}
                 </ul>
             </nav>
             <HeaderMobile/>

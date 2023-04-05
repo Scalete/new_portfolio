@@ -4,7 +4,7 @@
 
 .recentPosts {
     background-color: $color-effect;
-    padding: 23px 0 res(38, 32);
+    padding: 23px 0 38px;
 
     @include hover-underline-animation($color-blue);
 

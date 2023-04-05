@@ -5,6 +5,18 @@
 .works {
     padding: res(25, 35) 18px 83px;
 
+    &.worksPageStyles {
+        .worksItem {
+            padding-bottom: res(17, 48);
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
     .worksWrapper {
         display: flex;
         flex-direction: column;
@@ -53,6 +65,13 @@
 
     p {
         margin-top: res(24, 20);
+    }
+
+    h1 {
+        margin: 100px 0 res(13, 25);
+        font-weight: 900;
+        font-size: res(30, 44);
+        line-height: 1.36;
     }
 
     @include desktop {
