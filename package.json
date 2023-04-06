@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
@@ -16,7 +17,9 @@
     "react": "18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "18.2.0",
-    "typescript": "5.0.3"
+    "react-hook-form": "^7.43.9",
+    "typescript": "5.0.3",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@types/react-burger-menu": "^2.8.3",

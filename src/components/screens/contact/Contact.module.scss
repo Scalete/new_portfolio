@@ -1,0 +1,64 @@
+@import '@/styles/variables';
+@import '@/styles/mixin';
+@import '@/styles/media-queryes';
+
+.contact {
+    padding: 160px 0 53px;
+    display: flex;
+
+    h1 {
+        margin: 100px 0 25px;
+        font-weight: 900;
+        font-size: res(30, 44);
+        line-height: 1.36;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    input, textarea {
+        width: 100%;
+        margin-bottom: 2px;
+        padding: 10px;
+        border: 1px solid $color-light-gray ;
+        border-radius: 4px;
+        resize: none;
+        transition: box-shadow $fast, border-color $fast;
+
+        &:focus {
+            outline: none;
+            border-color: $color-blue;
+            box-shadow: 0 0 0 2px rgba(7, 49, 236, 0.2);
+        }
+    }
+
+    button {
+        margin-top: 30px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $color-red;
+    }
+
+    .inputs {
+        display: flex;
+        gap: 20px;
+    }
+
+    .inputBlock {
+        margin-bottom: 20px;
+    }
+
+    @include mobile {
+        margin: 0 15px;
+    }
+}

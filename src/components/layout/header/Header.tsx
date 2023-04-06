@@ -16,7 +16,7 @@ const Header: FC = () => {
     const router = useRouter();
 
     const renderRoutes = () => {
-        return routes.map(item => <li><Link className={`${styles.hoverUnderlineAnimation} ${router.pathname == item.link ? styles.active: ''}`} href={item.link}>{item.name}</Link></li>);
+        return routes.map((item, i) => <li key={i}><Link className={`${styles.hoverUnderlineAnimation} ${router.pathname == item.link ? styles.active: ''}`} href={item.link}>{item.name}</Link></li>);
     }
     
     return (
