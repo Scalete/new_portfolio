@@ -5,7 +5,7 @@ import styles from './RecentPosts.module.scss';
 
 const RecentPosts: FC = () => {
     return (
-        <section className={styles.recentPosts}>
+        <section className={`${styles.recentPosts} theme-change recent-theme-bg`}>
             <div className="container">
                 <div className={styles.recentPostsHeader}>
                     <span>Recent posts</span>

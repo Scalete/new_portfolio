@@ -1,8 +1,10 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './Contact.module.scss';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
 
 const Contact: FC = () => {
 
@@ -12,10 +14,7 @@ const Contact: FC = () => {
         message: string;
     }
 
-    const onSubmit = (data: IContactData ) => {
-        console.log(data);
-
-    };
+    const [isLoading, setIsLoading] = useState(false);
 
     const validationSchema = yup.object().shape({
         name: yup
@@ -32,9 +31,33 @@ const Contact: FC = () => {
             .max(1000, 'The message must contain no more than 1000 characters')
     });
 
-    const { register, handleSubmit, formState: { errors } } = useForm<IContactData >({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<IContactData >({
         resolver: yupResolver(validationSchema),
     });
+
+    const onSubmit = async (data: IContactData ) => {
+        try {
+            setIsLoading(true);
+            
+            const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID || '';
+            const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || '';
+            const userId = process.env.NEXT_PUBLIC_USER_ID;
+
+            const emailData: Record<string, string> = {
+                name: data.name,
+                email: data.email,
+                message: data.message,
+            };
+        
+            await emailjs.send(serviceId, templateId, emailData, userId);
+            toast.success('Message sent successfully!');
+        } catch (error) {
+            toast.error('Error! Try again');
+        } finally {
+            setIsLoading(false);
+            reset();
+        }
+    };
 
     return (
         <section className={styles.contact}>
@@ -57,7 +80,7 @@ const Contact: FC = () => {
                     </div>
                     <textarea placeholder="Hi, you are a good developer" {...register('message')}></textarea>
                     {errors.message && <p>{errors.message.message?.toString()}</p>}
-                    <button className='action main' type="submit">Send message</button>
+                    <button className={`action main ${isLoading? 'loading': ''}`} type="submit">{isLoading ? '': 'Send message'}</button>
                 </form>
             </div>
         </section>

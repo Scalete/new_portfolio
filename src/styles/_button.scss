@@ -17,4 +17,30 @@
             background-color: #D95757;
         }
     }
+
+    &.loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        background-color: $color-dark-red;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-top-color: $white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }

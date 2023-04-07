@@ -20,7 +20,7 @@ const WorkItem: FC<IWorkItemProps> = ({image, title, year, category, text}) => {
             <div className={styles.worksContent}>
                 <h2>{title}</h2>
                 <div className={styles.options}>
-                    <span>{year}</span><span>{category}</span>
+                    <span className='year-change'>{year}</span><span>{category}</span>
                 </div>
                 <p>{text}</p>
             </div>

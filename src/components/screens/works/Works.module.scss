@@ -74,6 +74,10 @@
         line-height: 1.36;
     }
 
+    img {
+        border-radius: 6px;
+    }
+
     @include desktop {
         .worksItem {
             gap: 18px;

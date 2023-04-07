@@ -3,6 +3,7 @@ import styles from './Header.module.scss'
 import Link from 'next/link'
 import HeaderMobile from './HeaderMobile'
 import { useRouter } from 'next/router'
+import ThemeToggle from '@/components/theme/ThemeToggle'
 
 const Header: FC = () => {
 
@@ -21,6 +22,7 @@ const Header: FC = () => {
     
     return (
         <header className={styles.header}>
+            <ThemeToggle />
             <nav className={styles.desktop}>
                 <ul>
                     {renderRoutes()}

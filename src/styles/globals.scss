@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap');
 @import './button';
 @import './media-queryes';
+@import './variables';
 
 *, :before, :after {
     box-sizing: border-box;
@@ -15,7 +16,6 @@ body {
     min-width: 320px;
     width: 100%;
     overflow-x: hidden;
-    font-family: 'Heebo', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
@@ -143,7 +143,7 @@ button {
 }
 
 .bm-cross {
-    background: #bdc3c7;
+    background: $white;
 }
 
 .bm-menu-wrap {
@@ -164,7 +164,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #b8b7ad;
+    color: $white;
 }
 
 .bm-item {
@@ -180,4 +180,67 @@ button {
 
 .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+}
+
+/* Theme */
+
+:root {
+    // Общие стили и переменные
+    --main-font: 'Heebo', sans-serif;
+}
+  
+.light-theme {
+    background-color: $white;
+    color: $color-dark;
+
+    .theme-change ul li > div {
+        background-color: $white;
+    }
+}
+
+.dark-theme {
+    background-color: $color-dark;
+    color: $white;
+
+    .theme-change ul li > div {
+        background-color: $color-dark;
+
+        span:first-child {
+            border-right: 1px solid $white;
+        }
+    }
+
+    .year-change {
+        background-color: $white !important;
+        color: $color-dark !important;
+    }
+
+    .recent-theme-bg {
+        background-color: $color-theme-light-gray;
+    }
+
+    header svg {
+        stroke: $white;
+        
+        path {
+            stroke: $white;
+        }
+    }
+
+    footer svg path {
+        fill: $white;
+    }
+
+    form {
+
+        input, textarea {
+            background-color: $color-dark;
+            color: $white;
+        }
+    }
+}
+
+body {
+    font-family: var(--main-font);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

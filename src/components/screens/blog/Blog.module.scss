@@ -38,6 +38,7 @@
 
     .blogOptions {
         margin-bottom: 15px;
+        transition: background-color 0.3s ease;
 
         span {
             font-size: res(16, 20);

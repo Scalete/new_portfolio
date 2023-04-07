@@ -3,7 +3,7 @@ import style from './Blog.module.scss';
 
 const Blog: FC = () => {
     return (
-        <section className={style.blog}>
+        <section className={`${style.blog} theme-change`}>
             <div className={`container ${style.container}`}>
                 <h1>Blog</h1>
                 <ul className={style.blogWrapper}>
