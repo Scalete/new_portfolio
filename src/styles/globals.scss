@@ -2,6 +2,7 @@
 @import './button';
 @import './media-queryes';
 @import './variables';
+@import './mixin';
 
 *, :before, :after {
     box-sizing: border-box;
@@ -196,6 +197,10 @@ button {
     .theme-change ul li > div {
         background-color: $white;
     }
+
+    header {
+        @include hover-underline-animation($color-dark);
+    }
 }
 
 .dark-theme {
@@ -219,13 +224,19 @@ button {
         background-color: $color-theme-light-gray;
     }
 
-    header svg {
-        stroke: $white;
-        
-        path {
+    header {
+
+        @include hover-underline-animation($white);
+
+        svg {
             stroke: $white;
+            
+            path {
+                stroke: $white;
+            }
         }
     }
+    
 
     footer svg path {
         fill: $white;

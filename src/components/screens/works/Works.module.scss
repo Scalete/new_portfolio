@@ -65,6 +65,12 @@
 
     p {
         margin-top: res(24, 20);
+
+        + a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
     }
 
     h1 {
@@ -112,6 +118,10 @@
                 width: auto;
                 height: 230px;
             }
+        }
+
+        p + a {
+            margin: 20px auto 0;
         }
     }
 

@@ -6,8 +6,6 @@
     position: absolute;
     top: 0;
     width: 100%;
-
-    @include hover-underline-animation;
     
     a {
         font-weight: 500;
@@ -20,7 +18,7 @@
         margin-right: 60px;
     }
 
-    li {
+    > nav li {
         margin-right: 33px;
 
         &:last-child {

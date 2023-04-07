@@ -4,20 +4,14 @@ import Link from 'next/link'
 import HeaderMobile from './HeaderMobile'
 import { useRouter } from 'next/router'
 import ThemeToggle from '@/components/theme/ThemeToggle'
+import { routes } from '../Layout'
 
 const Header: FC = () => {
-
-    const routes = [
-        {link: '/', name: 'Main'}, 
-        {link: '/works', name: 'Works'}, 
-        {link: '/blog', name: 'Blog'}, 
-        {link: '/contact', name: 'Contact'}
-    ];
 
     const router = useRouter();
 
     const renderRoutes = () => {
-        return routes.map((item, i) => <li key={i}><Link className={`${styles.hoverUnderlineAnimation} ${router.pathname == item.link ? styles.active: ''}`} href={item.link}>{item.name}</Link></li>);
+        return routes.map((item, i) => <li key={i}><Link className={`hoverUnderlineAnimation ${router.pathname === item.link || (router.pathname.includes(item.link + '/[id]')) ? styles.active: ''}`} href={item.link}>{item.name}</Link></li>);
     }
     
     return (

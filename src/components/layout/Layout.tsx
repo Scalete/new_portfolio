@@ -5,6 +5,13 @@ import { ToastContainer } from 'react-toastify';
 import classnames from 'classnames';
 import { useTheme } from '@/hooks/ThemeProvider';
 
+export const routes = [
+    {link: '/', name: 'Main'}, 
+    {link: '/works', name: 'Works'}, 
+    {link: '/blog', name: 'Blog'}, 
+    {link: '/contact', name: 'Contact'}
+];
+
 const Layout: FC<PropsWithChildren<unknown>> = ({children}) => {
 
     const { theme } = useTheme();

@@ -3,8 +3,11 @@
 @import '@/styles/media-queryes';
 
 .contact {
-    padding: 160px 0 53px;
+    height: 100vh;
+    min-height: 500px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     h1 {
         margin: 100px 0 25px;

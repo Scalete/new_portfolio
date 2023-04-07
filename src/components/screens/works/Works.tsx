@@ -3,11 +3,21 @@ import RecentWorkItem from './WorkItem';
 import styles from './Works.module.scss'
 import { useRouter } from 'next/router';
 
-interface WorksProps {
+interface WorksTitleProps {
     title: string;
+    works: WorkItem[];
 }
 
-const Works: FC<WorksProps> = ({title}) => {
+export interface WorkItem {
+    title: string;
+    shortDescription: string;
+    smallImg: string;
+    categories: string[];
+    rank: number;
+    date: string;
+}
+
+const Works: FC<WorksTitleProps> = ({title, works}) => {
     const router = useRouter();
 
     const isWorksPage = () => {
@@ -19,15 +29,17 @@ const Works: FC<WorksProps> = ({title}) => {
         <h1>{title}</h1>
         : <span className={styles.label}>{title}</span>
     }
+
+    const renderWorks = () => {
+        return works.map((item, i) => <li key={i}><RecentWorkItem image={item.smallImg} title={item.title} year={item.date.slice(0, 4)} categories={item.categories} text={item.shortDescription}/></li>);
+    }
     
     return (
         <section className={`${styles.works} ${isWorksPage() ? styles.worksPageStyles: ''}`}>
             <div className={`container ${styles.container}`}>
                 {generateHeader()}
                 <ul className={styles.worksWrapper}>
-                    <li><RecentWorkItem image="/works/template.jpg" title="Designing Dashboards" year="2020" category="Illustration" text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."/></li>
-                    <li><RecentWorkItem image="/works/template.jpg" title="Vibrant Portraits of 2020" year="2020" category="Illustration" text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."/></li>
-                    <li><RecentWorkItem image="/works/template.jpg" title="36 Days of Malayalam type" year="2020" category="Illustration" text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."/></li>
+                    {renderWorks()}
                 </ul>
             </div>
         </section>
