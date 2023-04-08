@@ -3,39 +3,32 @@ import { FC } from 'react'
 import styles from './Works.module.scss'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { WorkItem } from './Works';
 
 interface IWorkItemProps {
-    image: string;
-    title: string;
-    year: string;
-    categories: string[];
-    text: string;
+    work: WorkItem;
 }
 
-const WorkItem: FC<IWorkItemProps> = ({image, title, year, categories, text}) => {
+const WorkItem: FC<IWorkItemProps> = ({work}) => {
     const router = useRouter()
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
-        router.push(`${router.pathname}/1`);
+        router.push(`/works/${work._id}`);
     }
-
-    const renderCategories = () => {
-        return categories.join(', ');
-    }    
     
     return (
         <div className={styles.worksItem}>
             <div className={styles.imageWrapper}>
-                <Image src={image} width={246} height={180} alt="Work Item"/>
+                <Image src={work.smallImg} width={246} height={180} alt="Work Item"/>
             </div>
             
             <div className={styles.worksContent}>
-                <h2>{title}</h2>
+                <h2>{work.title}</h2>
                 <div className={styles.options}>
-                    <span className='year-change'>{year}</span><span>{renderCategories()}</span>
+                    <span className='year-change'>{work.date.slice(0, 4)}</span><span>{work.categories.join(', ')}</span>
                 </div>
-                <p>{text}</p>
+                <p>{work.shortDescription}</p>
                 <Link className='action main' href='' onClick={handleClick}>More</Link>
             </div>
         </div>

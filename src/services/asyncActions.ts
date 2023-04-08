@@ -9,6 +9,15 @@ export async function getAllWorks() {
     }
 }
 
+export async function getWorkById(_id: string) {
+    try {
+        const response = await axios.get(`${process.env.API_BASE_URL}/works/${_id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching works:', error);
+    }
+}
+
 export async function getRankedWorks() {
     try {
         const response = await axios.get(`${process.env.API_BASE_URL}/works/ranked`);

@@ -9,6 +9,7 @@ interface WorksTitleProps {
 }
 
 export interface WorkItem {
+    _id: string;
     title: string;
     shortDescription: string;
     smallImg: string;
@@ -31,7 +32,7 @@ const Works: FC<WorksTitleProps> = ({title, works}) => {
     }
 
     const renderWorks = () => {
-        return works.map((item, i) => <li key={i}><RecentWorkItem image={item.smallImg} title={item.title} year={item.date.slice(0, 4)} categories={item.categories} text={item.shortDescription}/></li>);
+        return works.map((item, i) => <li key={i}><RecentWorkItem work={item}/></li>);
     }
     
     return (
