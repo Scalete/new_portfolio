@@ -28,6 +28,10 @@
         }
     }
 
+    img {
+        margin-bottom: 30px;
+    }
+
     @include mobile {
         padding-top: 82px;
         margin: 0 18px;

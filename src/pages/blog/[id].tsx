@@ -1,25 +1,31 @@
 import Layout from '@/components/layout/Layout'
 import FullBlog from '@/components/screens/blog/full-blog/FullBlog';
 import { GetServerSideProps, NextPage } from 'next'
+import { IFullBlog } from '.';
+import { getBlogById } from '@/services/asyncActions';
 
-const BlogFullPage: NextPage = () => {
+export interface BlogFullPageProps {
+    blog: IFullBlog;
+}
+
+const BlogFullPage: NextPage<BlogFullPageProps> = ({blog}) => {
     return (
         <Layout>
-            <FullBlog />
+            <FullBlog blog={blog} />
         </Layout>
     )
 }
 
-// export const getServerSideProps: GetServerSideProps = async(context) => {
+export const getServerSideProps: GetServerSideProps = async(context) => {
     
-//     const { id } = context.params;
-//     const work = await getWorkById(id);
+    const { id } = context.params;
+    const blog = await getBlogById(id);
 
-//     return {
-//         props: {
-//             work,
-//         }
-//     };
-// };
+    return {
+        props: {
+            blog,
+        }
+    };
+};
 
 export default BlogFullPage;

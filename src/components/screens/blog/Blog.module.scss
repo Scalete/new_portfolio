@@ -56,10 +56,20 @@
         }
     }
 
+    a {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+
     @include mobile {
         padding-top: 74px;
         text-align: center;
         padding-left: 18px;
         padding-right: 18px;
+
+        a {
+            margin: 20px auto 0 auto;
+        }
     }
 }

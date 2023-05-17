@@ -18,7 +18,7 @@ export const useTheme = (): ThemeContextType => {
 };
 
 export const ThemeProvider = ({ children }: ThemeProviderProps): JSX.Element => {
-    const [theme, setTheme] = useState<Theme>('light');
+    const [theme, setTheme] = useState<Theme>('dark');
 
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme') as Theme | null;
