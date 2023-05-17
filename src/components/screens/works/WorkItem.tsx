@@ -29,7 +29,10 @@ const WorkItem: FC<IWorkItemProps> = ({work}) => {
                     <span className='year-change'>{work.date.slice(0, 4)}</span><span>{work.categories.join(', ')}</span>
                 </div>
                 <p>{work.shortDescription}</p>
-                <Link className='action main' href='' onClick={handleClick}>More</Link>
+                <div className={styles.actions}>
+                    <Link className='action main' href='' onClick={handleClick}>More</Link>
+                    <Link className='action main' href={work.link} target='__blank'>Link</Link>
+                </div>
             </div>
         </div>
     )

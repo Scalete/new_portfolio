@@ -7,7 +7,7 @@
 
     &.worksPageStyles {
         .worksItem {
-            padding-bottom: res(17, 48);
+            padding-bottom: res(17, 35);
         }
     }
 
@@ -52,6 +52,20 @@
                 font-size: res(16, 20);
                 line-height: 1.45;
                 color: $color-light-gray;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        text-align: center;
+        margin-top: 10px;
+
+        a {
+            width: 150px;
+
+            &:first-child {
+                margin-right: 20px;
             }
         }
     }
@@ -118,6 +132,10 @@
                 width: auto;
                 height: 230px;
             }
+        }
+
+        .actions {
+            justify-content: center;
         }
 
         p + a {

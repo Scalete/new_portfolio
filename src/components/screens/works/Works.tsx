@@ -14,6 +14,7 @@ export interface WorkItem {
     shortDescription: string;
     smallImg: string;
     categories: string[];
+    link: string;
     rank: number;
     date: string;
 }
