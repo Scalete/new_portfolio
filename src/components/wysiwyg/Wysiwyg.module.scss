@@ -1,0 +1,46 @@
+@import '@/styles/mixin';
+@import '@/styles/variables';
+
+.wysiwyg {
+    h1 {
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: res(28, 34);
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: res(26, 30);
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: res(20, 24);
+        margin-bottom: 10px;
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+
+        span {
+            &:first-child {
+                padding: 0 10px;
+                margin-right: res(8, 15);
+                background-color: $color-red;
+                border-radius: 16px;
+                font-weight: 900;
+                font-size: res(14, 18);
+                color: $white !important;
+            }
+
+            &:last-child {
+                font-size: res(16, 20);
+                line-height: 1.45;
+            }
+        }
+    }
+}

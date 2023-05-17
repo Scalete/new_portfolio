@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styles from './WorkFull.module.scss';
 import Image from 'next/image';
 import { WorkFullPageProps } from '@/pages/works/[id]';
+import wysiwyg from '@/components/wysiwyg/Wysiwyg.module.scss';
 
 const WorkFull: FC<WorkFullPageProps> = ({work}) => {
 
@@ -30,21 +31,19 @@ const WorkFull: FC<WorkFullPageProps> = ({work}) => {
     }
 
     return (
-        <section className={styles.fullPage}>
-            <div className="container">
-                <div className={styles.header}>
-                    <h1>{work.title}</h1>
-                    <div className={styles.options}>
-                        <span>{work.date.slice(0, 4)}</span>
-                        <span>{work.categories.join(', ')}</span>
-                    </div>
-                    <p>{work.shortDescription}</p>
-                    <Image src={work.smallImg} width={681} height={460} alt="Work Item"/>
+        <section className={`${styles.fullPage} ${wysiwyg.wysiwyg}`}>
+            <div className={styles.header}>
+                <h1>{work.title}</h1>
+                <div className={`${wysiwyg.options} ${styles.options}`}>
+                    <span>{work.date.slice(0, 4)}</span>
+                    <span>{work.categories.join(', ')}</span>
                 </div>
-                <ul className={styles.main}>
-                    {renderLayout()}
-                </ul>
+                <p>{work.shortDescription}</p>
+                <Image src={work.smallImg} width={681} height={460} alt="Work Item"/>
             </div>
+            <ul className={styles.main}>
+                {renderLayout()}
+            </ul>
         </section>
     )
 }

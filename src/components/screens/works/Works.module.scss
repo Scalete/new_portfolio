@@ -14,7 +14,7 @@
     .container {
         display: flex;
         flex-direction: column;
-        align-items: center
+        align-items: center;
     }
 
     .worksWrapper {
@@ -32,7 +32,7 @@
     .worksItem {
         display: flex;
         align-items: center;
-        padding-bottom: 15px;
+        padding-bottom: 30px;
         border-bottom: 1px solid $color-gray;
     }
     
