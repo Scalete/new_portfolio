@@ -29,6 +29,14 @@
         justify-content: flex-start !important;
     }
 
+    a {
+        text-align: center;
+    }
+
+    h2 + p {
+        margin-bottom: 20px;
+    }
+
     p {
         max-width: 681px;
     }

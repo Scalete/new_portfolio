@@ -3,6 +3,7 @@ import styles from './WorkFull.module.scss';
 import Image from 'next/image';
 import { WorkFullPageProps } from '@/pages/works/[id]';
 import wysiwyg from '@/components/wysiwyg/Wysiwyg.module.scss';
+import Link from 'next/link';
 
 const WorkFull: FC<WorkFullPageProps> = ({work}) => {
 
@@ -10,6 +11,7 @@ const WorkFull: FC<WorkFullPageProps> = ({work}) => {
         return work.headers.map((item, i) => (
             <li key={i} className={styles.mainHeading}>
                 <h2>{item.title}</h2>
+                <p>{item.description}</p>
                 <ul className={styles.mainHeadingItem}>
                     {
                         item.subheaders.map((item, i) => (
@@ -44,6 +46,7 @@ const WorkFull: FC<WorkFullPageProps> = ({work}) => {
             <ul className={styles.main}>
                 {renderLayout()}
             </ul>
+            <Link className='action main' href={work.link} target='__blank'>Link to web-site</Link>
         </section>
     )
 }

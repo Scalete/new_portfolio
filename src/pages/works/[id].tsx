@@ -7,6 +7,7 @@ import { GetServerSideProps, NextPage } from 'next';
 export interface FullWork extends WorkItem {
     headers: {
         title: string,
+        description: string,
         subheaders: {
             title: string;
             description: string;
