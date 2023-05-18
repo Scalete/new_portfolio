@@ -1,15 +1,18 @@
 import { FC } from 'react'
 import styles from './RecentPosts.module.scss';
+import { BlogProps } from '@/pages/blog';
+import Link from 'next/link';
 
-const RecentPostItem: FC = () => {
+const RecentPostItem: FC<BlogProps> = ({blog}) => {
     return (
         <div className={styles.recentPostItem}>
-            <h3>Making a design system from scratch</h3>
+            <h3>{blog.title}</h3>
             <div className={styles.recentPostItemOptions}>
-                <span>12 Feb 2020</span>
-                <span>Design, Pattern</span>
+                <span>{blog.date.split('T')[0]}</span>
+                <span>{blog.categories.join(', ')}</span>
             </div>
-            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+            <p>{blog.shortDescription}</p>
+            <Link className={styles.hoverUnderlineAnimation} href={`/blog/${blog._id}`}>More</Link>
         </div>
     )
 }

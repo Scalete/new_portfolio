@@ -24,6 +24,10 @@ export interface BlogsProps {
     blogs: IFullBlog[];
 }
 
+export interface BlogProps {
+    blog: BlogItem;
+}
+
 const BlogPage: NextPage<BlogsProps> = ({blogs}) => {
     return (
         <Layout>

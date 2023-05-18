@@ -3,7 +3,7 @@ import RecentWorkItem from './WorkItem';
 import styles from './Works.module.scss'
 import { useRouter } from 'next/router';
 
-interface WorksTitleProps {
+export interface WorksTitleProps {
     title: string;
     works: WorkItem[];
 }

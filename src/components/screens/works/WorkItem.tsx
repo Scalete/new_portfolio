@@ -9,7 +9,7 @@ interface IWorkItemProps {
     work: WorkItem;
 }
 
-const WorkItem: FC<IWorkItemProps> = ({work}) => {
+const WorkItemPage: FC<IWorkItemProps> = ({work}) => {
     const router = useRouter()
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -38,4 +38,4 @@ const WorkItem: FC<IWorkItemProps> = ({work}) => {
     )
 }
 
-export default WorkItem;
+export default WorkItemPage;
