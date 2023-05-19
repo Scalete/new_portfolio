@@ -31,6 +31,10 @@
         pointer-events: none;
     }
 
+    .halfActive {
+        color: $color-red;
+    }
+
     .mobile {
         display: none;
         

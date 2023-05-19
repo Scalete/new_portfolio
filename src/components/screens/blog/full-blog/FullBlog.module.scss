@@ -12,13 +12,13 @@
     .description, .textWrapper {
         text-align: left;
     }
+
+    .textWrapper, p {
+        max-width: 1000px;
+    }
     
     .description {
         margin-bottom: 20px;
-    }
-
-    p {
-        max-width: 1000px;
     }
 
     li {
