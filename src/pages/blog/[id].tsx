@@ -18,8 +18,21 @@ const BlogFullPage: NextPage<BlogFullPageProps> = ({blog}) => {
 
 export const getServerSideProps: GetServerSideProps = async(context) => {
     
-    const { id } = context.params;
+    const id = context.params?.id;
+    
+    if (!id || typeof id !== 'string') {
+        return {
+            notFound: true,
+        }
+    }
+
     const blog = await getBlogById(id);
+
+    if (!blog) {
+        return {
+            notFound: true,
+        }
+    }
 
     return {
         props: {

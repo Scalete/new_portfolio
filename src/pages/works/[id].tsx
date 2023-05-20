@@ -30,8 +30,21 @@ const WorkFullPage: NextPage<WorkFullPageProps> = ({ work }) => {
 
 export const getServerSideProps: GetServerSideProps = async(context) => {
     
-    const { id } = context.params;
+    const id = context.params?.id;
+    
+    if (!id || typeof id !== 'string') {
+        return {
+            notFound: true,
+        }
+    }
+
     const work = await getWorkById(id);
+
+    if (!work) {
+        return {
+            notFound: true,
+        }
+    }
 
     return {
         props: {
