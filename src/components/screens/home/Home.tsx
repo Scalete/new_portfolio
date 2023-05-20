@@ -5,6 +5,7 @@ import Works from '@/components/screens/works/Works';
 import { WorksProps } from '@/pages';
 import { BlogsProps } from '@/pages/blog';
 import { FC } from 'react'
+import styles from '../works/Works.module.scss'
 
 const Home: FC<WorksProps & BlogsProps> = ({works, blogs}) => {
 
@@ -12,7 +13,7 @@ const Home: FC<WorksProps & BlogsProps> = ({works, blogs}) => {
         <Layout>
             <Promo/>
             <RecentPosts blogs={blogs}/>
-            <Works title="Featured works" works={works}/>
+            <Works heading={<span className={styles.label}>Featured works</span>} works={works}/>
         </Layout>
     )
 }

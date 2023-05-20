@@ -5,12 +5,6 @@
 .works {
     padding: res(25, 35) 18px 83px;
 
-    &.worksPageStyles {
-        .worksItem {
-            padding-bottom: res(17, 35);
-        }
-    }
-
     .container {
         display: flex;
         flex-direction: column;

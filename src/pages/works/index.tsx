@@ -7,7 +7,7 @@ import { getAllWorks } from '@/services/asyncActions';
 const WorksPage: NextPage<WorksProps> = ({works}) => {
     return (
         <Layout>
-            <Works title='Works' works={works}/>
+            <Works heading={<h1>Works</h1>} works={works}/>
         </Layout>
     )
 }

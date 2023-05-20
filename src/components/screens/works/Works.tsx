@@ -1,10 +1,9 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import RecentWorkItem from './WorkItem';
 import styles from './Works.module.scss'
-import { useRouter } from 'next/router';
 
 export interface WorksTitleProps {
-    title: string;
+    heading: ReactNode;
     works: WorkItem[];
 }
 
@@ -19,27 +18,16 @@ export interface WorkItem {
     date: string;
 }
 
-const Works: FC<WorksTitleProps> = ({title, works}) => {
-    const router = useRouter();
-
-    const isWorksPage = () => {
-        return router.pathname === '/works';
-    }
-
-    const generateHeader = () => {
-        return isWorksPage() ?
-        <h1>{title}</h1>
-        : <span className={styles.label}>{title}</span>
-    }
+const Works: FC<WorksTitleProps> = ({heading, works}) => {
 
     const renderWorks = () => {
         return works.map((item, i) => <li key={i}><RecentWorkItem work={item}/></li>);
     }
     
     return (
-        <section className={`${styles.works} ${isWorksPage() ? styles.worksPageStyles: ''}`}>
+        <section className={`${styles.works}`}>
             <div className={`container ${styles.container}`}>
-                {generateHeader()}
+                {heading}
                 <ul className={styles.worksWrapper}>
                     {renderWorks()}
                 </ul>
