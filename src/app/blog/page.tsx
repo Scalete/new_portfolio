@@ -1,4 +1,4 @@
-import Layout from '@/components/layout/Layout';
+import MotionPage from '@/components/animation/MotionPage';
 import Blog from '@/components/screens/blog/Blog';
 import { getAllBlogs } from '@/services/asyncActions';
 import { NextPage } from 'next'
@@ -28,21 +28,22 @@ export interface BlogProps {
     blog: BlogItem;
 }
 
-const BlogPage: NextPage<BlogsProps> = ({blogs}) => {
+const BlogPage = async () => {
+
+    const { blogs } = await getAllBlogsData();
+
     return (
-        <Layout>
+        <MotionPage>
             <Blog blogs={blogs}/>
-        </Layout>
+        </MotionPage>
     )
 }
 
-export async function getServerSideProps() {
+async function getAllBlogsData() {
 
     const blogs = await getAllBlogs();
     return {
-        props: {
-            blogs,
-        },
+        blogs,
     };
 };
 

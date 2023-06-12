@@ -89,6 +89,8 @@
     }
 
     img {
+        width: auto;
+        height: auto;
         border-radius: 6px;
     }
 
@@ -125,6 +127,7 @@
             img {
                 width: auto;
                 height: 230px;
+                object-fit: contain;
             }
         }
 

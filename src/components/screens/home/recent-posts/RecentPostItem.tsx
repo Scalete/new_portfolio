@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import styles from './RecentPosts.module.scss';
-import { BlogProps } from '@/pages/blog';
+import { BlogProps } from '@/app/blog/page';
 import Link from 'next/link';
 
 const RecentPostItem: FC<BlogProps> = ({blog}) => {

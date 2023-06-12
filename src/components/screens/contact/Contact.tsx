@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, useState } from 'react'
 import styles from './Contact.module.scss';
 import { useForm } from 'react-hook-form';

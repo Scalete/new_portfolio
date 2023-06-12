@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FC, useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import styles from './Header.module.scss'
-import { routes } from '../Layout';
+import { routes } from '@/app/layout';
 
 const HeaderMobile: FC = () => {
     const [isOpen, setOpen] = useState(false);

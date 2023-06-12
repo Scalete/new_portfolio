@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FC } from 'react'
 import RecentPostItem from './RecentPostItem';
 import styles from './RecentPosts.module.scss';
-import { BlogsProps } from '@/pages/blog';
+import { BlogsProps } from '@/app/blog/page';
 
 const RecentPosts: FC<BlogsProps> = ({blogs}) => {
 

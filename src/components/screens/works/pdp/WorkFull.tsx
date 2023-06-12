@@ -1,9 +1,13 @@
 import { FC } from 'react'
 import styles from './WorkFull.module.scss';
 import Image from 'next/image';
-import { WorkFullPageProps } from '@/pages/works/[id]';
 import wysiwyg from '@/components/wysiwyg/Wysiwyg.module.scss';
 import Link from 'next/link';
+import { FullWork } from '@/app/works/[id]/page';
+
+export interface WorkFullPageProps {
+    work: FullWork;
+}
 
 const WorkFull: FC<WorkFullPageProps> = ({work}) => {
 

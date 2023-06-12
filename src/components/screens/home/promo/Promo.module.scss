@@ -41,11 +41,16 @@
         min-width: res(170, 243);
     }
 
+    img {
+        position: relative;
+        z-index: 1;
+    }
+
     .effect {
         position: absolute;
         top: res(9, 13);
         right: res(3, 5);
-        z-index: -1;
+        z-index: 0;
         min-height: res(170, 243);
         background-color: $color-effect;
     }

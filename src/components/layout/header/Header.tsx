@@ -1,17 +1,19 @@
+'use client'
+
 import { FC } from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
 import HeaderMobile from './HeaderMobile'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/theme/ThemeToggle'
-import { routes } from '../Layout'
+import { routes } from '@/app/layout'
 
 const Header: FC = () => {
 
-    const router = useRouter();
+    const pathname = usePathname()
 
     const renderRoutes = () => {
-        return routes.map((item, i) => <li key={i}><Link className={`hoverUnderlineAnimation ${router.pathname === item.link ? styles.active: router.pathname.includes(item.link + '/[id]')? styles.halfActive: ''}`} href={item.link}>{item.name}</Link></li>);
+        return routes.map((item, i) => <li key={i}><Link className={`hoverUnderlineAnimation ${pathname === item.link ? styles.active: pathname.includes(item.link + '/[id]')? styles.halfActive: ''}`} href={item.link}>{item.name}</Link></li>);
     }
     
     return (

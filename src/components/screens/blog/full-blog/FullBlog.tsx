@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styles from './FullBlog.module.scss';
 import wysiwyg from '@/components/wysiwyg/Wysiwyg.module.scss';
-import { BlogFullPageProps } from '@/pages/blog/[id]';
+import { BlogFullPageProps } from '@/app/blog/[id]/page';
 import Image from 'next/image';
 
 const FullBlog: FC<BlogFullPageProps> = ({blog}) => {

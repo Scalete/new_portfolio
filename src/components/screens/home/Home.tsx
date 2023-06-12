@@ -1,20 +1,19 @@
-import Layout from '@/components/layout/Layout';
 import Promo from '@/components/screens/home/promo/Promo';
 import RecentPosts from '@/components/screens/home/recent-posts/RecentPosts';
 import Works from '@/components/screens/works/Works';
-import { WorksProps } from '@/pages';
-import { BlogsProps } from '@/pages/blog';
+import { BlogsProps } from '@/app/blog/page';
 import { FC } from 'react'
 import styles from '../works/Works.module.scss'
+import { WorksProps } from '@/app/page';
 
 const Home: FC<WorksProps & BlogsProps> = ({works, blogs}) => {
 
     return (
-        <Layout>
+        <>
             <Promo/>
             <RecentPosts blogs={blogs}/>
             <Works heading={<span className={styles.label}>Featured works</span>} works={works}/>
-        </Layout>
+        </>
     )
 }
 

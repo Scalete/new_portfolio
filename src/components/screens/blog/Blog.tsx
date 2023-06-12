@@ -1,8 +1,10 @@
+'use client'
+
 import { FC } from 'react'
 import style from './Blog.module.scss';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { BlogsProps } from '@/pages/blog';
+import { useRouter } from 'next/navigation';
+import { BlogsProps } from '@/app/blog/page';
 
 const Blog: FC<BlogsProps> = ({blogs}) => {
 

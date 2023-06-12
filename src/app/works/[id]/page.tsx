@@ -1,4 +1,4 @@
-import Layout from '@/components/layout/Layout';
+import MotionPage from '@/components/animation/MotionPage';
 import { WorkItem } from '@/components/screens/works/Works';
 import WorkFull from '@/components/screens/works/pdp/WorkFull';
 import { getWorkById } from '@/services/asyncActions';
@@ -16,40 +16,24 @@ export interface FullWork extends WorkItem {
     }[]
 }
 
-export interface WorkFullPageProps {
-    work: FullWork;
-}
+const WorkFullPage = async({ params }: { params: { id: string } }) => {
 
-const WorkFullPage: NextPage<WorkFullPageProps> = ({ work }) => {
+    const { work } = await getWorkFull(params.id);
+
     return (
-        <Layout>
+        <MotionPage>
             <WorkFull work={work}/>
-        </Layout>
+        </MotionPage>
+        
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async(context) => {
-    
-    const id = context.params?.id;
-    
-    if (!id || typeof id !== 'string') {
-        return {
-            notFound: true,
-        }
-    }
+const getWorkFull = async(id: string) => {
 
     const work = await getWorkById(id);
 
-    if (!work) {
-        return {
-            notFound: true,
-        }
-    }
-
     return {
-        props: {
-            work,
-        }
+        work
     };
 };
 
