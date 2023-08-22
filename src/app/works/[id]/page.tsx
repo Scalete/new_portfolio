@@ -24,8 +24,17 @@ const WorkFullPage = async({ params }: { params: { id: string } }) => {
         <MotionPage>
             <WorkFull work={work}/>
         </MotionPage>
-        
     )
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+
+    const { work } = await getWorkFull(params.id)
+
+    return {
+        title: work.title,
+        description: work.shortDescription,
+    };
 }
 
 const getWorkFull = async(id: string) => {

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap');
 @import './button';
 @import './media-queryes';
 @import './variables';
@@ -42,7 +41,6 @@ a {
 }
 
 button {
-    font-family: 'Heebo', sans-serif;
     background-color: transparent;
     cursor: pointer;
 }
@@ -184,11 +182,6 @@ button {
 }
 
 /* Theme */
-
-:root {
-    // Общие стили и переменные
-    --main-font: 'Heebo', sans-serif;
-}
   
 .light-theme {
     background-color: $white;
@@ -252,8 +245,6 @@ button {
 }
 
 body {
-    font-family: var(--main-font);
-    
     > div {
         transition: background-color 0.3s ease, color 0.3s ease;
     }

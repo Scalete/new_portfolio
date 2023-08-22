@@ -8,6 +8,16 @@ export interface BlogFullPageProps {
     blog: IFullBlog;
 }
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+
+    const { blog } = await getBlogFull(params.id)
+
+    return {
+        title: blog.title,
+        description: blog.shortDescription,
+    };
+}
+
 const BlogFullPage = async ({params}: {params: {id: string}}) => {
 
     const { blog } = await getBlogFull(params.id);

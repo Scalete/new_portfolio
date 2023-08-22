@@ -1,10 +1,10 @@
 import Promo from '@/components/screens/home/promo/Promo';
 import RecentPosts from '@/components/screens/home/recent-posts/RecentPosts';
 import Works from '@/components/screens/works/Works';
-import { BlogsProps } from '@/app/blog/page';
 import { FC } from 'react'
 import styles from '../works/Works.module.scss'
 import { WorksProps } from '@/app/page';
+import { BlogsProps } from '@/app/blog/page';
 
 const Home: FC<WorksProps & BlogsProps> = ({works, blogs}) => {
 

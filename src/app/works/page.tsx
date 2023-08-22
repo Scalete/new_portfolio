@@ -2,6 +2,11 @@ import MotionPage from '@/components/animation/MotionPage';
 import Works from '@/components/screens/works/Works';
 import { getAllWorks } from '@/services/asyncActions';
 
+export const metadata = {
+    title: 'Works',
+    description: 'All web-sites projects',
+}
+
 const WorksPage = async () => {
     const { works } = await getAllWorksData();
 

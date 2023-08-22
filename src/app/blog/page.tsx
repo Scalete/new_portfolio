@@ -28,6 +28,11 @@ export interface BlogProps {
     blog: BlogItem;
 }
 
+export const metadata = {
+    title: 'Blog',
+    description: 'Blog page with posts',
+}
+
 const BlogPage = async () => {
 
     const { blogs } = await getAllBlogsData();
