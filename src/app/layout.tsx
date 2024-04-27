@@ -6,11 +6,6 @@ import Footer from "@/components/layout/footer/Footer";
 import ToastContainerWrapper from "@/components/layout/ToastContainerWrapper";
 import { Heebo } from 'next/font/google'
 
-export const metadata = {
-  title: 'Home',
-  description: 'Home page with main info',
-}
-
 const heebo = Heebo({
     subsets: ['latin'],
     display: 'swap',
